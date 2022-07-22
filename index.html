@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Respawn Store</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+
+
+  <header>
+    <img class="logo" src="./assets/nav-icon.png" alt="logo">
+    <nav>
+      <ul class="nav_links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contactar</a></li>
+      </ul>
+    </nav>
+
+    <span class="userLogin">
+      <a href="./login.html"><i class="fa-solid fa-user"></i></a>
+    </span>
+
+          <div class="shopping-cart shoppingCartButton">
+              <div class="sum-prices">
+                  <i
+                      class="fas fa-shopping-cart shoppingCartButton"
+                  ></i>
+                  <h6 id="sum-prices"></h6>
+              </div>
+          </div>
+    
+      <div class="producstOnCart hide">
+        <div class="overlay"></div>
+        <div class="top">
+            <button id="closeButton">
+                <i class="fas fa-times-circle"></i>
+            </button>
+            <h3>Carrito</h3>
+        </div>
+        <ul id="buyItems"><h4 class="empty">Tu carrito está vacío.</h4></ul>
+        <button class="btn checkout hidden">Comprar</button>
+    </div>
+
+    <div class="producstOnCart hide">
+      <div class="overlay"></div>
+      <div class="top">
+          <button id="closeButton">
+              <i class="fas fa-times-circle"></i>
+          </button>
+          <h3>Carrito</h3>
+      </div>
+      <ul id="buyItems">
+          <h4 class="empty">Tu carrito está vacío.</h4>
+          <!-- <li class="buyItem">
+  <img src="Images/producs-images/Mobiles/galaxynote10.png">
+  <div>
+    <h5>Products Name</h5>
+    <h6>$199</h6>
+    <div>
+      <button>-</button>
+      <span class="countOfProduct">1</span>
+      <button>+</button>
+    </div>
+  </div>
+</li> -->
+      </ul>
+      <button class="btn checkout hidden">Check out</button>
+  </div>
+</nav>
+  </header> 
+
+
+
+
+
+  
+
+
+
+  <!-- Barra de búsqueda -->
+
+  <div class="container">
+      <input type="text" placeholder="Buscar productos" id="search-box">
+      <i id="iconoBusqueda" class="fa-solid fa-magnifying-glass"></i>
+
+  <!-- Contendor de productos -->
+      <div id="botonesFiltro">
+        <button class="button-value" onclick="filtroBotones('mostrarTodo')">Mostrar todo</button>
+        <button class="button-value" onclick="filtroBotones('menorPrecio')">Menor precio</button>
+        <button id="button-value" onclick="filtroBotones('mayorPrecio')">Mayor precio</button>
+        <button id="button-value" onclick="filtroBotones('ofertas')">Ofertas</button>
+        <button id="button-value" onclick="filtroBotones('juegazos')">Juegos</button>
+        <button id="button-value" onclick="filtroBotones('softwares')">Software</button>
+        <button id="button-value" onclick="filtroBotones('giftcards')">Tarjetas de regalo</button>
+      </div>
+
+      <div class="image-container">
+
+       <div class="image" id="videojuegos">
+          <img src="./assets/prodimgs/eldenring.jpg" alt="">
+          <h3>Elden Ring</h3>
+          <p>$3.999,00</p>
+          <button class="btn btn-small addToCart" data-product-id="2"><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="videojuegos">
+          <img src="./assets/prodimgs/ghostwire.jpg" alt="">
+          <h3>Ghostwire: Tokyo</h3>
+          <p>$2.999,00</p>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="videojuegos">
+          <img src="./assets/prodimgs/fifa22.jpg" alt="">
+          <h3>FIFA 22</h3>
+          <p>$4.500,00</p>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="">
+          <img src="./assets/prodimgs/minecraft.jpg" alt="">
+          <h3>Minecraft</h3>
+          <p>$1.500,00</p>
+          <del>$2.000,00</del><span class="discout-box">-25%</span>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="">
+          <img src="./assets/prodimgs/rust.jpg" alt="">
+          <h3>Rust</h3>
+          <p>$2.500,00</p>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="">
+          <img src="./assets/prodimgs/windows10.jpg" alt="">
+          <h3>Microsoft Windows 10 Pro</h3>
+          <p>$3.200,00</p>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="">
+          <img src="./assets/prodimgs/office.jpg" alt="">
+          <h3>Microsoft Office Professional Plus 2021</h3>
+          <p>$2.000,00</p>
+          <del>$6.000,00</del><span class="discout-box">-66,66%</span>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="">
+          <img src="./assets/prodimgs/steamgiftcard.jpg" alt="">
+          <h3>Steam Gift Card 500 ARS</h3>
+          <p>$623,00</p>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+ 
+       <div class="image" data-title="">
+          <img src="./assets/prodimgs/rdr2.jpg" alt="">
+          <h3>Red Dead Redemption 2</h3>
+          <p>$2.500,00</p>
+          <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+       </div>
+
+       <div class="image" data-title="">
+        <img src="./assets/prodimgs/skyrim.jpg" alt="">
+        <h3>The Elders Scrolls V: Skyrim SE</h3>
+        <p>$1.900,00</p>
+        <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+     </div>
+
+     <div class="image" data-title="">
+      <img src="./assets/prodimgs/sekiro.jpg" alt="">
+      <h3>Sekiro™: Shadows Die Twice</h3>
+      <p>$1.300,00</p>
+      <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+    </div>
+
+    <div class="image" data-title="">
+      <img src="./assets/prodimgs/fo76.jpg" alt="">
+      <h3>Fallout 76</h3>
+      <p>$450,00</p>
+      <del>$1.500,00</del><span class="discout-box">-70%</span>
+      <button><i class="fa-solid fa-cart-plus"></i>Agregar al carro</button>
+   </div>
+ 
+    </div>
+ 
+ </div>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/carrito-compras.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/545b0d7f51.js" crossorigin="anonymous"></script>
+</body>
+</html>
