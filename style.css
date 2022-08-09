@@ -90,95 +90,69 @@ li, a {
 
 /* Contenedores de items */
 
-.container {
+.wrapper {
     padding:25px 10%;
     text-align: center;
-    font-family: 'Raleway', sans-serif;
-}
+    width: 95%;
+    margin: 0 auto;
+  }
 
-.container p {
-    margin-top: 15px;
-}
-  
-.container input {
+
+  #search-container {
+    margin: 1em 0;
+  }
+
+  #search-container input {
+    width: 400px;
+    background-color: #2C303A;
     border-radius: 8px;
-    background-color: rgb(44, 48, 58);
-}
+    font-size: 15px;
+    border:3px solid #000;
+    padding: 12px 15px;
+  }
 
-.container input:focus { 
+  input:focus { 
     outline: none;
 }
 
-input, select, textarea{
+  input, select, textarea{
     color: #ffffff;
 }
 
-#iconoBusqueda {
-    color: white;
-}
-
-  .container .heading{
-    padding-bottom: 25px;
-  }
-  
-  .container #search-box{
-    width: 400px;
-    border:3px solid #000;
-    padding:12px 15px;
-    font-size: 15px;
-  }
-
-  select {
+  #search-container button {
     cursor: pointer;
-    padding: 12px 15px;
-    color: gray;
-    border: none;
-    background-color: rgb(44, 48, 58);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: rgb(255, 153, 0);
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 0.5em;
   }
 
+  .button-value {
+    border: 2px solid rgb(255, 153, 0);
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+  }
 
+  .active {
+    background-color: rgb(255, 153, 0);
+    color: #ffffff;
+  }
 
-  
-  .container .image-container{
+  #products {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap:20px;
     padding-top: 30px;
   }
-  
-  .container .image-container .image{
-    color: white;
-    padding:15px;
-    background-color: rgb(30, 31, 38);
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    border:2px solid #000;
-    width: 200px;
-    border-radius: 5px;
-    animation: fadeIn .2s linear;
-  }
-  
-  
-  .container .image-container .image img{
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  
-  .container .image-container .image h3{
-    font-size: 15px;
-  }
 
-  .container del {
-    font-size: 14px;
-  }
-
-  .container button {
+  #products button {
+    cursor: pointer;
     padding: 10px;
     background-color: rgb(255, 153, 0);
     border: none;
@@ -186,67 +160,89 @@ input, select, textarea{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .container button:hover {
-    cursor: pointer;
-    background-color: rgb(185, 111, 0);
+  #products button:hover {
+    background-color: rgb(172, 105, 5);
   }
 
-  .discout-box {
-    font-weight: bold;
-    font-size: 13px;
-    padding: 5px;
-    background: rgb(163, 20, 20);
-    margin-left: 10px;
-  }
-
-
-  /* Botones de filtro de busqueda */
- 
-  #botonesFiltro button {
-    border: 1px solid rgb(255, 153, 0);
-    background-color: transparent;
+  .product-name, h5 {
     color: white;
-    cursor: pointer;
-    padding: 1em 2.2em;
-    border-radius: 3em;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+  }
+
+  .product-name h6{
+    color: white;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .card {
+    background-color: #1E1F26;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+    width: 200px;
+    border-radius: 5px;
+    animation: fadeIn .2s linear;
+  }
+
+  .card img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .image-container {
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 15em;
+  }
+
+  .container {
+    padding-top: 1em;
+  }
+
+  .container h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
+    font-size: 16px;
+    color: white;
+  }
+
+  .hide {
+    display: none;
   }
 
 
- .active {
-    background-color: #6759ff;
-    color: #ffffff;
-    
-  }
 
-  /* Anim */
 
-  @keyframes fadeIn {
-    0%{
-      transform: scale(.5) translateY(-10px);
-      opacity: 0;
+  @media screen and (max-width: 720px) {
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      height: 10em;
+    }
+
+    .card {
+      max-width: 10em;
+      margin-top: 1em;
+    }
+
+    #products {
+      grid-template-columns: auto auto;
+      grid-column-gap: 1em;
     }
   }
-
-  /* Media queries */
   
-  @media (max-width:768px){
-    .container #search-box{
-      width: 100%;
-    }
-  }
-  
-  @media (max-width:450px){
-  
-    .container{
-      padding:25px 20px;
-    }
-  
-    .container .image-container .image{
-      width: 100%;
-    }
-  }
-
-
 
 
 
@@ -262,93 +258,6 @@ input, select, textarea{
 
 
 
-
-
-
-
-
-
-
-
-
-
-  /*Navbar*/
-nav {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-/* logo , my account and shopping cart */
-nav .navbar-top {
-    max-width: 1600px;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.navbar-top .logo {
-    position: absolute;
-    top: 30px;
-    left: 100px;
-    width: 150px;
-    height: 75px;
-}
-
-#menuButton {
-    width: 45px;
-    height: 40px;
-    cursor: pointer;
-    color: #49989e;
-    background: transparent;
-    border: none;
-    display: none;
-    font-size: 1.5rem;
-}
-
-#menuButton:focus {
-    outline: none;
-}
-
-#menuButton:hover {
-    color: #0d3c3f;
-}
-
-/* container of my account and shopping cart */
-.navbar-top > div {
-    margin-right: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-}
-
-/* My account text*/
-.account-text {
-    font-size: 0.9rem;
-    padding: 10px;
-}
-.account-btn {
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-.account-btn:focus {
-    outline: none;
-}
-
-.navbar-top .shopping-cart {
-    margin-left: 10px;
-    font-size: 1.4rem;
-}
 
 .shopping-cart .sum-prices {
     display: flex;
@@ -372,7 +281,7 @@ nav .navbar-top {
 
 
 .producstOnCart {
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none; 
     scrollbar-width: none;
     overflow: hidden;
     overflow-y: scroll;
@@ -650,36 +559,3 @@ ul .nav-links {
     text-align: left;
 }
 
-.navbarResponsive .nav-links > .link {
-    z-index: 15;
-    color: white;
-}
-
-#hearderSlide {
-    background-color: #49989e;
-    height: 55vh;
-    position: relative;
-}
-
-#hearderSlide .MS-content {
-    margin: 0 1%;
-    white-space: nowrap; /* required */
-    overflow: hidden; /* required */
-    height: 100%;
-}
-
-#hearderSlide .item {
-    display: inline-block;
-    width: 33.3333%; /* required * Determines number of visible slides */
-    position: relative; /* required */
-    vertical-align: top; /* required */
-    overflow: hidden; /* required */
-    height: 100%; /* recommended */
-    white-space: normal;
-}
-
-.item img {
-    width: 100%;
-    height: 100%;
-    padding: 20px 10px;
-}
